@@ -313,7 +313,7 @@ async def show_contact(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def build_user_conv() -> ConversationHandler:
     return ConversationHandler(
         entry_points=[
-            CallbackQueryHandler(reg_start, pattern=r"^(reg_start|reg_mock\|.)$"),
+            CallbackQueryHandler(reg_start, pattern=r"^(reg_start|reg_mock\|.+)$"),
             MessageHandler(
                 filters.TEXT & filters.Regex(r"^✍️ Ro'yxatdan o'tish$"),
                 _reg_start_msg,
